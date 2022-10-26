@@ -4,22 +4,13 @@ public class Triangle extends Shape{
     private int base;
     private int height;
 
-    public Triangle(int height, int base,String name){
-        super(name);
+    public Triangle(int height, int base,String name, String color){
+        super(name, color);
         this.height = height;
         this.base = base;
     }
 
 
-    @Override
-    public String getName(){
-        return name;
-    }
-
-    @Override
-    public void setName(String name){
-        this.name=name;
-    }
 
     public int getHeight(){
         return this.height;
@@ -39,6 +30,11 @@ public class Triangle extends Shape{
     @Override
     public String getArea(){
         int area = (this.base * this.height)/2;
-        return "The area is: " + area;
+        return " " + area;
+    }
+
+    @Override
+    public String getStringDisplay(){
+        return "I am a " + super.getColor() + " triangle named " + super.getName() + " my base is " + this.getBase() + " and my height is " + this.getHeight() + " my area is " + this.getArea();
     }
 }

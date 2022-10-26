@@ -4,20 +4,11 @@ import java.lang.Math.*;
 public class Circle extends Shape {
     private double radius;
 
-    public Circle(double radius, String name){
-        super(name);
+    public Circle(double radius, String name, String color){
+        super(name, color);
         this.radius=radius;
     }
 
-    @Override
-    public String getName(){
-        return name;
-    }
-
-    @Override
-    public void setName(String name){
-        this.name=name;
-    }
 
     public double getRadius(){
         return this.radius;
@@ -30,6 +21,12 @@ public class Circle extends Shape {
     public String getArea(){
         double area = Math.PI*(this.radius * this.radius);
 
-        return "The area is: "+ area;
+        return " "+ area;
+    }
+
+    @Override
+    public String getStringDisplay(){
+        return "I am a " + super.getColor() + " circle named " + super.getName() + " my radius is " + this.getRadius() + 
+        " and my area is " + this.getArea();
     }
 }

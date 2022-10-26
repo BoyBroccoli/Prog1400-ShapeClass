@@ -4,22 +4,13 @@ public class Square extends Shape {
     private int height;
     private int width;
 
-    public Square(int height, int width, String name){
-        super(name);
+    public Square(int height, int width, String name, String color){
+        super(name, color);
         this.height=height;
         this.width=width;
     }
 
 
-    @Override
-    public String getName(){
-        return name;
-    }
-
-    @Override
-    public void setName(String name){
-        this.name=name;
-    }
 
     public int setHeight(int height){
         return this.height;
@@ -38,6 +29,12 @@ public class Square extends Shape {
     @Override
     public String getArea(){
         int area = height * width;
-        return "The area is: " + area;
+        return " " + area;
+    }
+
+    @Override
+    public String getStringDisplay(){
+        return "I am a " + super.getColor() + " square named " + super.getName() + " my width is " + this.getWidth() + 
+        " and my height is " + this.getHeight() + " my area is " + this.getArea();
     }
 }
